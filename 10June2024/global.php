@@ -1,16 +1,18 @@
 <?php
-$x = 5;
-$y = 10;
+$x = 10;
+$y = 20;
 
 function myTest() {
-    $x = 3; $y = 2;
+    $x = 10; $y = 35;
     $y = $x + $y;
+    echo $y;
 } 
 
-myTest();  // outputs 15
-echo $y;
+myTest();
+// echo $y;
 
-echo "<pre>";
-print_r($GLOBALS);
+
+// echo "<pre>";
+// print_r($GLOBALS);
 
 ?>

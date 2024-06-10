@@ -6,7 +6,7 @@ echo "Good Morning<br>"
 
 ?>
 
-<?php
+<?
 // short open Tag
 echo "Hello World with short tag <br>";
 
