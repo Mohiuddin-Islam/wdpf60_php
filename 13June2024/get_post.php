@@ -9,7 +9,7 @@
 //echo "</pre>";
 
 if(isset($_REQUEST['subscribe'])){
-    echo $_REQUEST['email'];
+echo $_REQUEST['email'];
 echo "<br>";
 echo $_REQUEST['pswd'];
 }
