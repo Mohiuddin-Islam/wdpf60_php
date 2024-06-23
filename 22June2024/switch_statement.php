@@ -14,10 +14,10 @@
         case "news":
         echo "What's happening around the world";
         break;
-        case "weather";
+        case "weather":
         echo "Your weekly forecast";
         break;
-        case "sports";
+        case "sports":
         echo "Latest sports highlights";
         break;
         default:
