@@ -16,7 +16,7 @@ class SimpleClass
 
 $obj1 = new SimpleClass;
 echo $obj1->var;
-echo $obj1::a;  //scope resulation
+echo $obj1::a;  //scope resolution
 $obj1->displayVar();
 $obj1->displayConst();
 ?>
