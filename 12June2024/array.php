@@ -13,7 +13,7 @@ echo "<br>";
 
 //Associative array
 
-$capitals = ["bangladesh"=>"Dhaka", "Srilanka"=>"Colombo","Nepal"=>"Katmondu"];
+$capitals = ["Bangladesh"=>"Dhaka", "Srilanka"=>"Colombo","Nepal"=>"Katmondu"];
 $capitals["Bhutan"] = "Thimpu";
 print_r($capitals);
 
