@@ -6,23 +6,24 @@
     <title>Factorial Number</title>
 </head>
 <body>
-    <?php 
-    if(isset($_POST['submit'])){
 
-$num = $_POST['number'];
-$fact = $num;
-
-for($i = 1; $i < $num; $i++){
-    $fact = $fact * $i;
+<?php 
+if(isset($_POST['number'])){
+    $num = $_POST['number'];
+    echo factcalc($num);
+}
+function factcalc($num){
+    $fact = 1;
+    for($i = $num; $i>=1; $i--){
+        $fact = $fact * $i;
+    }
+    echo "Factorial of $num is = ".$fact;
 }
 
-echo "factorial of $num is = ".$fact;
-//echo "{$num} factorial number is: {$fact}";
 
-}
-    ?>
+?>
     <form action="" method="post">
-        <input type="text" name="number" placeholder="Enter Number">
+        <input type="number" name="number" placeholder="Enter Number">
         <input type="submit" name="submit" value="Check">
 
     </form>

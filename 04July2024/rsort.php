@@ -4,9 +4,10 @@ $cities = array("Dhaka", "Khulna", "Rajshahi", "Cumilla", "Sylhet", "Barisal");
 
 echo "<pre>";
 print_r($cities);
-rsort($cities);
+
 
 echo "<hr>";
+rsort($cities);
 print_r($cities);
 
 ?>
