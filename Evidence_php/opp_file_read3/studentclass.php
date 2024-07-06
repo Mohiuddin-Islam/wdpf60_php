@@ -14,9 +14,9 @@
 
         }
         class Student {
-            public $id;
-            public $name;
-            public $score;
+            // public $id;
+            // public $name;
+            // public $score;
             public $datas;
     
             public function __construct($x){
@@ -28,7 +28,7 @@
                     $line = explode("|", $data);
                     list($id,$name,$score,$result) = $line;
                     if($id == $stid){
-                        echo "ID- $id<br> Name-$name<br> Score- $score<br> Result- $result";
+                        echo "ID- $id<br> Name- $name<br> Score- $score<br> Result- $result";
                     }
         
                 }
