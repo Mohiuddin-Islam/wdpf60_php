@@ -27,9 +27,9 @@
     
 <form action="" method="post">
     
-    <input type="number" name="num1" >
-    <input type="number" name="num2" >
-    <input type="number" name="num3" >
+    <input type="number" name="num1" placeholder="Enter Number">
+    <input type="number" name="num2" placeholder="Enter Number">
+    <input type="number" name="num3" placeholder="Enter Number">
     <input type="submit" name="submit" value="submit">
 
 </form>
