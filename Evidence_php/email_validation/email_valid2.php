@@ -12,7 +12,7 @@
     if(isset($_POST['submit'])){
 
     $user = $_POST['user'];
-    $pattern = '/^[a-z0-9]+@[A-z]{4,8}$/';
+    $pattern = '/^[A-z0-9]+@[A-z]{4,8}$/';
 
     if(preg_match($pattern, $user)){
     echo "User name is valid";
