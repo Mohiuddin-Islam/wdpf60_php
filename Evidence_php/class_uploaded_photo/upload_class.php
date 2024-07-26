@@ -6,15 +6,16 @@
     <title>Uploaded File</title>
 </head>
 <body>
-    <?php
-    if(isset($_POST['submit'])){
-        $photo = $_FILES["photo"];
-        $obj = new File($photo);
-        echo $obj->doUpload();
+    <h2>Uploaded File</h2>
 
-
-    }
+    <?php 
     
+    if(isset($_POST['submit'])){
+        $picture = $_FILES['photo'];
+        $obj = new File($picture);
+        $obj->doUpload();
+    }
+
     class File{
         public $image;
         public $name;
@@ -22,26 +23,29 @@
         public $size;
         public $ext;
 
+
         public function __construct($file){
             $this->image = $file;
             $this->name = $this->image['name'];
             $this->tmp = $this->image['tmp_name'];
             $this->size = $this->image['size'];
-            $filedata = pathinfo($this->name);
-            $this->ext = strtolower($filedata['extension']);
+            $file_data = pathinfo($this->name);
+            $this->ext = strtolower($file_data['extension']);
 
         }
 
         public function doUpload(){
-            $upload ='photo/'.$this->name;
+            $upload = 'photo/'.$this->name;
+            $allowed_size = 307200;
+            $allowed_ext = ['jpg','jpeg','png'];
             $error = [];
-            $allowed_ext = ["jpg","jpeg","png"];
-            $allowed_size =307200;
+
+
             if($this->size > $allowed_size){
-                $error[] = "300 kb is allowed";
+                $error[] = 'Within 300 kb allowed';
             }
             if(!in_array($this->ext,$allowed_ext)){
-                $error[] = "jpg,jpeg,png are allowed";
+                $error[] = "jpg, jpeg, png are allowed";
             }
             if(count($error)>0){
                 foreach($error as $err){
@@ -53,16 +57,16 @@
                 if($status)echo "Successfully Uploaded";
             }
         }
-
+        
     }
     
-    ?>
     
-
+    
+    
+    ?>
     <form action="" method="post" enctype="multipart/form-data">
-        Picture: <input type="file" name="photo" ><br><br>
-        <input type="submit" value="submit" name="submit">
-
+        <b>Picture:</b> <input type="file" name="photo"><br>
+        <input type="submit" name="submit" value="Upload">
     </form>
 </body>
 </html>
