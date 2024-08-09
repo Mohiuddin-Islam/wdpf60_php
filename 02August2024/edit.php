@@ -37,12 +37,13 @@ if(isset($_POST['submit'])){
 <body>
     <h1>Edit</h1>
     <form action="" method="post">
-    Id: <input type="text" name="id" value="<?php echo $id;?>" ><br>
-    Name: <input type="text" name="name" value="<?php echo $nm;?>"><br>
-    Email:<input type="text" name="email" value="<?php echo $em;?>" ><br>
-    Password: <input type="text" name="pass" value="<?php echo $ps;?>"><br>
-    Phone:<input type="text" name="phone" value="<?php echo $pn;?>" ><br>
+    ID: <input type="text" name="id" placeholder="Enter ID" value="<?php echo $id;?>" ><br>
+    Name: <input type="text" name="name" placeholder="Enter Name" value="<?php echo $nm;?>"><br>
+    Email:<input type="text" name="email" placeholder="Enter Email Address" value="<?php echo $em;?>" ><br>
+    Password: <input type="text" name="pass" placeholder="Enter Password" value="<?php echo $ps;?>"><br>
+    Phone:<input type="text" name="phone" placeholder="Enter Phone Number" value="<?php echo $pn;?>" ><br>
     <input type="submit" value="Update" name="submit">
+    
     </form>
 
 </body>

@@ -20,15 +20,15 @@ if(isset($_POST['submit'])){
     $md5 = md5($pass);
 
     if(empty($fname)){
-        $msz= 'Fill up this field';
+        $msz = 'Fill up this field';
     } if(empty($lname)){
-        $msz1= 'Fill up this field';
+        $msz1 = 'Fill up this field';
     } if(empty($email)){
-        $msz2= 'Fill up this field';
+        $msz2 = 'Fill up this field';
     } if(empty($pass)){
-        $msz3= 'Fill up this field';
+        $msz3 = 'Fill up this field';
     } if(empty($c_pass)){
-        $msz4= 'Fill up this field';
+        $msz4 = 'Fill up this field';
     }
     if(!empty($fname) && !empty($lname) && !empty($email) && !empty($pass) && !empty($c_pass)){
     if($pass===$c_pass){
@@ -65,28 +65,28 @@ if(isset($_POST['submit'])){
             <div class="col-lg-4" style="margin-top: 100px;">
             <form action="" method="post">
             <div class="mb-2">
-                <label class="form-label">First Name</label>
-                <input type="text" name="fname" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $fname;}  ?>" >
+                <label class="form-label"><b>First Name:</b></label>
+                <input type="text" name="fname" placeholder="Enter First Name" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $fname;}  ?>" >
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz</h6>" ;} ?>
             </div>
             <div class="mb-2">
-                <label class="form-label">Last Name</label>
-                <input type="text" name="lname" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $lname;}  ?>">
+                <label class="form-label"><b>Last Name:</b></label>
+                <input type="text" name="lname" placeholder="Enter Last Name" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $lname;}  ?>">
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz1</h6>"  ;} ?>
             </div>
             <div class="mb-2">
-                <label class="form-label">Email</label>
-                <input type="text" name="email" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $email;}  ?>">
+                <label class="form-label"><b>Email:</b></label>
+                <input type="text" name="email" placeholder="Enter Email Address" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $email;}  ?>">
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz2</h6>"  ;} ?>
             </div>
             <div class="mb-2">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $pass;}  ?>">
+                <label class="form-label"><b>Password:</b></label>
+                <input type="password" name="password" placeholder="Enter Password" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $pass;}  ?>">
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz3</h6>"  ;} ?>
             </div>
             <div class="mb-2">
-                <label class="form-label">Confirm password </label>
-                <input type="password" name="con_password" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $c_pass;}  ?>">
+                <label class="form-label"><b>Confirm Password:</b></label>
+                <input type="password" name="con_password" placeholder="Enter Confirm Password" class="form-control" value="<?php if(isset($_POST['submit'])){ echo $c_pass;}  ?>">
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz4</h6>"  ;} ?>
             </div>
             <div class="mb-2">

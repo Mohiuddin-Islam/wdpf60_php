@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
         $query = $conn->query($sql);
 
         if($query->num_rows>0){
-            $_SESSION['login'] = 'login success';
+            $_SESSION['login'] = "<h3 style='color:green'>Login Successful</h3>";
             header('location:insert.php');
         }else{
             echo "Not found";
@@ -51,18 +51,18 @@ if(isset($_POST['submit'])){
             <div class="col-lg-4" style="margin-top: 200px;">
                 <?php
                 if(isset($_GET['created'])){
-                    echo "User create successfully";
+                    echo "<h3 style='color:green'>User Create Successfully</h3>";
                 }
                 ?>
             <form action="" method="post">
             <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="text" name="email" class="form-control"  value="<?php if(isset($_POST['submit'])){ echo $em;}  ?>">
+                <label class="form-label"><b>Email:</b></label>
+                <input type="text" name="email" placeholder="Enter Email Address" class="form-control"  value="<?php if(isset($_POST['submit'])){ echo $em;}  ?>">
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz</h6>" ;} ?>
             </div>
             <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control"  value="<?php if(isset($_POST['submit'])){ echo $ps;} ?>">
+                <label class="form-label"><b>Password:</b></label>
+                <input type="password" name="password" placeholder="Enter Password" class="form-control"  value="<?php if(isset($_POST['submit'])){ echo $ps;} ?>">
                 <?php if(isset($_POST['submit'])){echo "<h6 style=color:red>$msz1</h6>" ;} ?>
             </div>
             <div class="mb-3">

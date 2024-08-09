@@ -10,7 +10,7 @@ if(isset($_SESSION['login'])){
 
 ?>
 
-<h3><a href="four.php">Logout</a></h3>
+<h3><a style="color: red;" href="four.php">Logout</a></h3>
 
 
 <!DOCTYPE html>
@@ -23,10 +23,10 @@ if(isset($_SESSION['login'])){
 <body>
     <h1>Insert</h1>
     <form action="" method="post">
-    Name: <input type="text" name="name" ><br>
-    Email:<input type="text" name="email" ><br>
-    Password: <input type="text" name="pass" ><br>
-    Phone:<input type="text" name="phone" ><br>
+    Name: <input type="text" name="name" placeholder="Enter Name" ><br>
+    Email:<input type="text" name="email" placeholder="Enter Email Address" ><br>
+    Password: <input type="text" name="pass" placeholder="Enter Password" ><br>
+    Phone:<input type="text" name="phone" placeholder="Enter Phone Number" ><br>
     <input type="submit" value="Submit" name="submit">
     </form>
     
