@@ -13,9 +13,9 @@ if(isset($_POST['email'])){
     $email = $_POST['email'];
 
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-        echo "Email Address is Valid";
+        echo "<h3 style= 'color:green'>Email Address is Valid</h3>";
     }else{
-        echo "Email Address is Invalid";
+        echo "<h3 style= 'color:red'>Email Address is Invalid</h3>";
     }
 }
 

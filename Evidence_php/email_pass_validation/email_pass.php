@@ -13,11 +13,11 @@
         $pass = $_POST['pass'];
 
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        echo "Email address is wrong";
+        echo "<h3 style= 'color:red'>Email Address is Wrong</h3>";
         }else if(strlen($pass)<8){
-            echo "Password must be 4 to 8 digit";
+            echo "<h3 style= 'color:red'>Password must be 4 to 8 digit</h3>";
         }else{
-            echo "Login Valid";
+            echo "<h3 style= 'color:green'>Login Valid</h3>";
         }
     }
     

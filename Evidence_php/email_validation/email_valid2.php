@@ -15,9 +15,9 @@
     $pattern = '/^[A-z0-9]+@[A-z]{4,8}$/';
 
     if(preg_match($pattern, $user)){
-    echo "User name is valid";
+    echo "<h3 style= 'color:green'>User name is valid</h3>";
     }else{
-    echo "User name is invalid";
+    echo "<h3 style= 'color:red'>User name is Invalid</h3>";
 }
 
 }
