@@ -29,10 +29,8 @@ $student = array(
 ?>
 
 <table >
-<tr>
-    <th>Name</th>
-    <th>Mark</th>
-</tr>
+
+<tr><th>Name</th><th>Mark</th></tr>
 
 <?php 
 
