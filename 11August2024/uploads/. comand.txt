@@ -1,0 +1,69 @@
+1.SELECT * FROM `employees`;
+
+2.SELECT * FROM employees WHERE employeeNumber = 1088
+3.SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+4.SELECT employeeNumber, firstName, lastName from employees WHERE jobTitle = 'Sales Rep';
+
+5.SELECT employeeNumber, firstName, lastName, reportsTo from employees WHERE jobTitle = 'Sales Rep' AND reportsTo = 1102 ;
+
+6.SELECT firstName FROM employees ORDER BY firstName ASC;
+7.SELECT firstName, lastName FROM employees ORDER BY firstName DESC;
+8.SELECT * FROM `employees` LIMIT 0, 5;
+
+9.SELECT `customerNumber`, `customerName`, city, country FROM customers WHERE `country` = 'USA' AND `city`= 'NYC' OR `city` = 'Allentown';
+
+10.SELECT productCode, productName, buyPrice FROM products WHERE buyPrice > 50 AND buyPrice < 100
+
+11.SELECT DISTINCT country FROM customers;
+
+12.SELECT employeeNumber, lastName, firstName, city, country FROM employees, offices, offices.officeCode WHERE offices.officeCode = employees.officeCode
+13.SELECT customers.customerNumber, customerName, orderNumber, orderDate, status FROM customers, orders WHERE customers.customerNumber = orders.customerNumber;
+14.SELECT customers.customerNumber, customerName, orderNumber, orderDate, status FROM customers, orders WHERE customers.customerNumber = orders.customerNumber AND status != 'shipped';
+15.SELECT COUNT(orderNumber),status FROM orders GROUP BY status;
+16.SELECT orderNumber, SUM(priceEach*quantityOrdered) FROM orderdetails GROUP BY orderNumber;
+
+INSERT
+
+1.INSERT INTO employees(`employeeNumber`,`lastName`,`firstName`,`extension`,`email`,`officeCode`,`reportsTo`,`jobTitle`) VALUES ('5000', 'Masum', 'Ahmed', '302', 'masud@gmail.com', '6','1001', 'programmer');
+2.INSERT INTO employees VALUES ('5000', 'Masum', 'Ahmed', '302', 'masud@gmail.com', '6','1001', 'programmer');
+
+Multiple Value:
+
+3.INSERT INTO employees VALUES ('5005', 'Masum', 'Ahmed', '305', 'masud@gmail.com', '8','1013', 'programmer'), ('5001', 'Masum', 'Ahmed', '303', 'masud@mial.com', '7','1012', 'programmer');
+
+UPDATE
+
+1.UPDATE employees SET lastName = 'chowdhury', jobTitle = 'Assistant Programmer' WHERE employeeNumber = 5001;
+
+DELETE
+
+1.DELETE FROM `employees` WHERE employeeNumber = 1702;
+
+MAX_MIN
+
+1.SELECT MAX(buyPrice) AS 'Maximum Price' FROM products;
+2.SELECT MIN(buyPrice) AS 'Minimum Price' FROM products;
+
+COUNTRY IN
+
+1.SELECT customerNumber,customerName,country FROM `customers` WHERE country IN ('France','USA','Australia');
+
+COUNTRY NOT IN
+
+2.SELECT customerNumber,customerName,country FROM `customers` WHERE country NOT IN ('France','USA','Australia');
+
+BETWEEN
+
+1.SELECT productCode, productName, buyPrice FROM products WHERE buyPrice BETWEEN 20 AND 40;
+
+BETWEEN NOT
+
+2.SELECT productCode, productName, buyPrice FROM products WHERE buyPrice NOT BETWEEN 20 AND 40;
+
+
+create user 'mohiuddin'@'localhost' identified by 'abcd1234';
+drop user 'mohiuddin'@'localhost';
+rename user 'jason'@'localhost' to 'jasongilmore'@'localhost';
+grant select, insert on wdpf60.* to 'mohiuddin'@'localhost' identified by 'abcd1234';
+grant update on wdpf60.* to 'mohiuddin'@'localhost' identified by 'abcd1234';

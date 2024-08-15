@@ -16,7 +16,7 @@ class File{
         $errors = array();
 
         $data = pathinfo($name);
-        $ext = $data['extension'];
+        $ext = strtolower($data['extension']);
 
         if($filesize>$allowedsize){
             $errors[] = "File size must be within 500kb";
