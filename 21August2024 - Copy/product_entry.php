@@ -15,10 +15,9 @@ require_once "dbconfig.php"; ?>
     $cats = $db->query($sql);
 
 
-
-
     if(isset($_POST['submit'])){
         extract($_POST);
+
         $sql = "INSERT INTO products(id, product_name, product_details, product_price, product_quantity, product_category) VALUES (NULL, '$name', '$details', '$price', '$quantity', '$category')";
 
         $result = $db->query($sql);
@@ -46,7 +45,7 @@ require_once "dbconfig.php"; ?>
             <option value="">Select One</option>
         <?php 
         while($row = $cats->fetch_assoc()){ ?>
-            <option value='<?php  echo $row['id'] ?>'><?php  echo $row['name'] ?></option>
+            <option value='<?php  echo $row['cat_id'] ?>'><?php  echo $row['cat_name'] ?></option>
 
             <?php 
             }
