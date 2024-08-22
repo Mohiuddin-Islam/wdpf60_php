@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if(isset($_POST['submit'])){
     require_once "dbconfig.php";
@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $row = $result->fetch_assoc();
 
     if($result->num_rows==0){
-        $_SESSION['error'] = "Email or Password is wrong";
+        $_SESSION['error'] = "Email or Password is Wrong";
         header("location:index.php");
     }else{
         $_SESSION['name'] = $row['fullname'];

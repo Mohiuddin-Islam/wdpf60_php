@@ -19,14 +19,14 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      
-      <?php 
+
+      <?php
       session_start();
       if(isset($_SESSION['error'])){
-        echo '<div class="alert-danger">' . $_SESSION['error'] . '</div><br>';
+        echo '<div class="alert-danger">' . $_SESSION['error'] . '</div>';
 
       }
-      
+
       ?>
       <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
     </div>

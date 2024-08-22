@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['email'])){
+if(!isset($_SESSION['email'])){
   header("location:index.php");
 }
 
@@ -161,9 +161,9 @@ if(isset($_SESSION['email'])){
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
+                      style="position: relative; height: 300px;">
                       <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                   </div>
+                  </div>
                   <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
                     <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
                   </div>
@@ -653,7 +653,7 @@ if(isset($_SESSION['email'])){
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+
   <!-- Footer page -->
 <?php include "includes/footer.php"; ?>
 

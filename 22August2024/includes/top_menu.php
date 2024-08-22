@@ -1,4 +1,3 @@
-<!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -17,15 +16,6 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-
-      </li>
-      <!-- Logout -->
-      <li class="nav-item">
-        <a class="nav-link" href="logout.php" role="button">
-          <i class="fas fa-user"></i>
-        </a>
-      </li>
-
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
         </a>
@@ -45,7 +35,12 @@
           </form>
         </div>
       </li>
-
+<!-- logout -->
+<li class="nav-item">
+        <a class="nav-link"  href="logout.php" role="button">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </li>
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -143,4 +138,3 @@
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
