@@ -10,7 +10,7 @@ require_once "dbconfig.php"; ?>
 <body>
     <h3>Product Entry</h3>
     <?php 
-
+    //Category list collect
     $sql = "SELECT * FROM categories";
     $cats = $db->query($sql);
 
@@ -23,10 +23,10 @@ require_once "dbconfig.php"; ?>
         $result = $db->query($sql);
         // echo $db->affected_rows;
 
-        if($db->affected_rows){
-            echo "<h3 style= 'color:green'>Successfully Added</h3>";
-        }else{
+        if($db->error){
             echo "<h3 style= 'color:red'>Failed</h3>";
+        }else{
+            echo "<h3 style= 'color:green'>Successfully Added</h3>";
         }
     }
     

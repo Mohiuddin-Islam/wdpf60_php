@@ -11,6 +11,11 @@ require_once "dbconfig.php"; ?>
     <h3>Product Edit</h3>
     <?php 
 
+    //Category list collect
+    $sql = "SELECT * FROM categories";
+    $cats = $db->query($sql);
+
+    //Pick id from URL and from
     $id = $_REQUEST['id'];
 
     // print_r($row);
@@ -19,15 +24,15 @@ require_once "dbconfig.php"; ?>
     if(isset($_POST['update'])){
         extract($_POST);
 
-        $sql = "UPDATE products SET product_name = '$name', product_details = '$details', product_price = '$price', product_quantity = '$quantity' WHERE id = '$id'";
+        $sql = "UPDATE products SET product_name = '$name', product_details = '$details', product_price = '$price', product_quantity = '$quantity', product_category = '$category' WHERE id = '$id'";
 
         $result = $db->query($sql);
         // echo $db->affected_rows;
 
-        if($db->affected_rows){
-            echo "<h3 style= 'color:green'>Successfully Added</h3>";
-        }else{
+        if($db->error){
             echo "<h3 style= 'color:red'>Failed</h3>";
+        }else{
+            echo "<h3 style= 'color:green'>Successfully Added</h3>";
         }
     }
 
@@ -46,6 +51,19 @@ require_once "dbconfig.php"; ?>
         Product Details: <br> <textarea name="details" placeholder="Enter Product Details Here"><?php echo $row->product_details; ?></textarea><br>
         Product Price: <br> <input type="text" name="price" placeholder="Enter Product Price" value="<?php echo $row->product_price; ?>"><br>
         Product Quantity: <br> <input type="number" name="quantity" placeholder="Enter Product Quantity" value="<?php echo $row->product_quantity; ?>"><br>
+        Product Category: <br>
+        <select name="category">
+            <option value="">Select One</option>
+        <?php 
+        while($cat = $cats->fetch_assoc()){ ?>
+            <option value="<?php  echo $cat['cat_id'] ?>" <?php echo $row->product_category == $cat['cat_id']? "selected" : ""; ?>><?php  echo $cat['cat_name'] ?></option>
+
+            <?php 
+            }
+        
+        ?>
+
+        </select><br><br>
         <input type="submit" name="update" value="UPDATE">
         <input type="hidden" name="id" value="<?php echo $id ?>">
 
