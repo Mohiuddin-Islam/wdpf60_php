@@ -1,0 +1,38 @@
+Show ID, Product Name, Price and Manufacture Company Name:
+
+SELECT product.id, product.name AS "Product Name",product.price,manufacturer.name AS "Manufacturer Name" FROM product,manufacturer WHERE manufacturer.id = product.manufacturer_id;
+
+Create View Table: Join Two Table Method View
+
+CREATE VIEW product_list AS
+SELECT product.id, product.name AS "Product Name",product.price,manufacturer.name AS "Manufacturer Name" FROM product,manufacturer WHERE manufacturer.id = product.manufacturer_id;
+
+CREATE TRIGGER Manufacturer_delete:
+AFTER DELETE
+ON manufacturer FOR EACH ROW
+DELETE FROM product
+WHERE product.manufacturer_id = old.id;
+
+CREATE TRIGGER Manufacturer_insert:
+AFTER INSERT
+ON manufacturer FOR EACH ROW
+INSERT INTO log_book VALUES(NULL, new.name, "Insert", NOW());
+
+
+CREATE TRIGGER Manufacturer_update:
+AFTER UPDATE
+ON manufacturer FOR EACH ROW
+INSERT INTO log_book VALUES(NULL, old.name, "Update", NOW());
+
+
+CREATE TRIGGER Manufacturer_delete:
+AFTER DELETE
+ON manufacturer FOR EACH ROW
+INSERT INTO log_book VALUES(NULL, old.name, "Delete", NOW());
+
+
+
+
+
+
+
