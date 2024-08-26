@@ -15,7 +15,6 @@
     }
     
     
-    
     ?>
     <form action="" method="post">
         <input type="text" name="name" placeholder="Enter Manufacturer Name"><br>

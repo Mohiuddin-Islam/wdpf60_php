@@ -4,6 +4,14 @@ SELECT *
 FROM product
 WHERE price>10000;
 
+CREATE TRIGGER:
+
+DELETE FROM product
+WHERE m_id = old.m_id
+
+CREATE PROCEDURE:
+INSERT INTO manufacturer (name,address,contact_no) VALUES (NULL, name,address,contact);
+
 Show ID, Product Name, Price and Manufacture Company Name:
 
 SELECT product.id, product.name AS "Product Name",product.price,manufacturer.name AS "Manufacturer Name" FROM product,manufacturer WHERE manufacturer.id = product.manufacturer_id;

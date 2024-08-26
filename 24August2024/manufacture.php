@@ -1,4 +1,4 @@
-<?php $conn = new mysqli("localhost:3310", "root", "", "mj5")  ?>
+<?php $conn = new mysqli("localhost", "root", "", "cr7")  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<h3>Delete Manufacturer ID</h3>
     <?php
     if (isset($_POST['delete'])) {
         $mid = $_POST['company'];
@@ -42,8 +43,7 @@
             <?php } ?>
         </select><br>
         <input type="submit" value="Delete" name="delete">
-    </form><br>
-    <a href="product.php">Product List</a>
+    </form>
 
 
 </body>

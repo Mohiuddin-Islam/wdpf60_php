@@ -15,7 +15,7 @@
         $delete = mysqli_query($conn,$result);
 
         if($delete){
-            echo "<h1>Successfully Delete</h1>";
+            echo "<h1 style= 'color:green'>Successfully Delete</h1>";
         }
     }
     

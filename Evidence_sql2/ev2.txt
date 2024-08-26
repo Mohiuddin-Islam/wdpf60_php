@@ -1,0 +1,12 @@
+Evidence-2
+
+1) SELECT * FROM user WHERE name='$name' AND password ='$pass'
+
+2)DELETE FROM result WHERE result.student_id = OLD.id
+
+3)INSERT INTO student(id,student_name,address,mobile)VALUES(NULL,name,address,mobile)
+
+4)CREATE VIEW all_display AS
+SELECT student.id,student_name,address,mobile,module_name,totalmarks FROM student,result WHERE student.id = result.student_id
+
+5)UPDATE student SET student_name='$student',address='$address',mobile='$mobile' WHERE id='$id'
