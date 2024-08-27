@@ -1,4 +1,4 @@
-<?php $conn = new mysqli("localhost","root", "", "homework2"); ?>
+<?php $conn = new mysqli("localhost:3310","root", "", "homework2"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +15,9 @@
     </style>
 </head>
 <body>
-    <h2>Ans No-2</h2>
+    <h2>Ans No-4</h2>
     <?php 
-    $sql = $conn->query("SELECT * FROM product_above_5000");
+    $sql = $conn->query("SELECT * FROM product_above_5000_price");
 
     ?>
     <table>

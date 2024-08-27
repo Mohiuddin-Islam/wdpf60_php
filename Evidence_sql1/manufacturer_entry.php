@@ -1,3 +1,4 @@
+<?php $conn = new mysqli("localhost:3310","root", "", "homework2"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
