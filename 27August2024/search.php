@@ -28,10 +28,13 @@
     </form>
 
     <?php 
-
-    while($row = $result->fetch_object()){
-        echo "product Code:". $row->productCode . "Product Name" . $row->productName . "Product Price:". $row->buyPrice . "<hr>";
+    if(isset($_POST['search'])){
+        while($row = $result->fetch_object()){
+            echo "product Code:". $row->productCode . "Product Name" . $row->productName . "Product Price:". $row->buyPrice . "<hr>";
+        }
     }
+
+    
     
     ?>
 </body>
