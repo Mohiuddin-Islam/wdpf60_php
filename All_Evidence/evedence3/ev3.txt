@@ -1,0 +1,13 @@
+Evidence-3
+
+1)("SELECT * FROM users WHERE name='$name' AND pass='$md5'")
+
+2)Update triggers- INSERT INTO product_log VALUES(NULL,old.name,old.product_price,"Update",NOW(),old.id)
+Insert triggers-INSERT INTO product_log VALUES(NULL,NEW.name,NEW.product_price,"Insert",NOW(),NEW.id)
+Delete triggers-INSERT INTO product_log VALUES(NULL,old.name,old.product_price,"Delete",NOW(),old.id)
+
+Update- "UPDATE products SET name='$name',product_details='$details',product_price='$price' WHERE id ='$id' ";
+Delete-  "DELETE FROM products WHERE id ='$id' ";
+
+3)Routines(insert_product)-INSERT INTO products(id,name,product_details,product_price)VALUES(NULL,name,product_details,product_price)
+Insert-"CALL insert_product('$name','$details','$price') ";

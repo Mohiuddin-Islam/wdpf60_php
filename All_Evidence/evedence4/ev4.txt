@@ -1,0 +1,10 @@
+1)("SELECT * FROM users WHERE name='$name' AND password='$pass' AND phone='$phone'");
+
+2)Delete Triggers=DELETE FROM product WHERE product.manufacturer_id=old.id;
+Delete="DELETE FROM manufacturer WHERE id='$mid'";
+
+3)INSERT INTO manufacturer(id,name,address,conatct_no)VALUES(NULL,name,address,contact);
+insert = "CALL insert_manufacture('$name','$address','$phone')";
+
+4)4)CREATE VIEW product_list AS
+SELECT * FROM product WHERE price>2000 AND price<6000
