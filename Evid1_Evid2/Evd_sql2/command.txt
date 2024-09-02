@@ -1,0 +1,5 @@
+Evidence: 2
+
+1. CREATE VIEW all_display AS SELECT student.id,name,address,mobile,module_name,totalmarks,student_id FROM student,result WHERE student.id = result.student_id;
+2. DELETE FROM result WHERE result.student_id = old.id;
+3. INSERT INTO student (id,name,address,mobile) VALUES (NULL,name,address,mobile);
