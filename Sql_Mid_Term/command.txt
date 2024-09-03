@@ -1,0 +1,8 @@
+1. Create View product_above_5000:
+CREATE view product_above_5000_price AS SELECT * FROM product WHERE price>5000;
+
+2. Trigger From Product Delete:
+DELETE FROM product WHERE product.manufacturer_id = old.id;
+
+3. Store procedure from Manufacturer Table:
+INSERT INTO manufacturer(id,name,address,contact_no) VALUES (NULL,name,address,contact);
