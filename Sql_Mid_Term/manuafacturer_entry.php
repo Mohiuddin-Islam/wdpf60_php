@@ -15,35 +15,7 @@
     </style>
 </head>
 <body>
-    <h2>Ans No-2</h2>
-    <h2>Manufacturer Entry</h2>
-
-    <?php 
-    if(isset($_POST['submit'])){
-        extract($_POST);
-
-        $sql = "CALL add_manufacturer('$name','$address','$contact')";
-
-        $insert = mysqli_query($conn,$sql);
-
-        if($insert){
-            echo "<h3 style= 'color:green'>Data Inserted</h3>";
-        }else{
-            echo "<h3 style= 'color:red'>Data not Inserted</h3>";
-        }
-    }
-    
-    
-    ?>
-
-    <form action="" method="post">
-        Name: <br><input type="text" name="name" placeholder="Enter Manufacturer Name"><br>
-        Address: <br><textarea name="address" placeholder="Enter Address Here"></textarea><br>
-        Contact: <br><input type="text" name="contact" placeholder="Enter Contact Number"><br>
-        <input type="submit" name="submit" value="Submit">
-
-
-    </form><br>
+    <br>
     <h2>Ans No-4</h2>
     <h2>Product Price Above 5000</h2>
 
