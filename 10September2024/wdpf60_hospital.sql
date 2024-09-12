@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2024 at 09:22 AM
+-- Generation Time: Sep 12, 2024 at 09:02 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -77,13 +77,14 @@ INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `
 
 CREATE TABLE `doctors` (
   `id` int(11) NOT NULL,
-  `specilization` varchar(255) DEFAULT NULL,
-  `doctorName` varchar(255) DEFAULT NULL,
-  `address` longtext DEFAULT NULL,
-  `docFees` varchar(255) DEFAULT NULL,
-  `contactno` bigint(11) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `specilization` varchar(100) DEFAULT NULL,
+  `doctorName` varchar(100) DEFAULT NULL,
+  `address` varchar(150) DEFAULT NULL,
+  `photo` varchar(100) NOT NULL,
+  `docFees` decimal(10,2) DEFAULT NULL,
+  `contactno` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` char(32) DEFAULT NULL,
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
   `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -92,13 +93,13 @@ CREATE TABLE `doctors` (
 -- Dumping data for table `doctors`
 --
 
-INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `email`, `password`, `creationDate`, `updationDate`) VALUES
-(1, 'ENT', 'Anuj kumar', 'A 123 XYZ Apartment Raj Nagar Ext Ghaziabad', '500', 142536250, 'doctor@gmail.com', 'f9f16d97c90d8c6f2cab37bb6d1f1992', '2024-04-10 18:16:52', '2024-09-10 06:24:14'),
-(2, 'Endocrinologists', 'Charu Dua', 'X 1212 ABC Apartment Laxmi Nagar New Delhi ', '800', 1231231230, 'charudua12@test.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-11 01:06:41', '2024-05-14 09:26:28'),
-(4, 'Pediatrics', 'Priyanka Sinha', 'A 123 Xyz Aparmtnent Ghaziabad', '700', 74561235, 'p12@t.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:12:23', NULL),
-(5, 'Orthopedics', 'Vipin Tayagi', 'Yasho Hospital New Delhi', '1200', 95214563210, 'vpint123@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:13:11', NULL),
-(6, 'Internal Medicine', 'Dr Romil', 'Max Hospital Vaishali  GZB', '1500', 8563214751, 'drromil12@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:14:11', NULL),
-(7, 'Obstetrics and Gynecology', 'Bhavya rathore', 'Shop 12 Indira Puram Ghaziabad', '800', 745621330, 'bhawya12@tt.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:15:18', NULL);
+INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `photo`, `docFees`, `contactno`, `email`, `password`, `creationDate`, `updationDate`) VALUES
+(1, 'ENT', 'Anuj kumar', 'A 123 XYZ Apartment Raj Nagar Ext Ghaziabad', 'doctor6.jpg', '500.00', '142536250', 'doctor@gmail.com', 'f9f16d97c90d8c6f2cab37bb6d1f1992', '2024-04-10 18:16:52', '2024-09-12 06:55:09'),
+(2, 'Endocrinologists', 'Charu Dua', 'X 1212 ABC Apartment Laxmi Nagar New Delhi ', 'doctor2.jpg', '800.00', '1231231230', 'charudua12@test.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-11 01:06:41', '2024-09-12 06:44:48'),
+(4, 'Pediatrics', 'Sumit Sinha', 'A 123 Xyz Aparmtnent Ghaziabad', 'doctor3.jpg', '700.00', '74561235', 'p12@t.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:12:23', NULL),
+(5, 'Orthopedics', 'Vipin Tayagi', 'Yasho Hospital New Delhi', 'doctor4.jpg', '1200.00', '95214563210', 'vpint123@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:13:11', NULL),
+(6, 'Internal Medicine', 'Dr Romil', 'Max Hospital Vaishali  GZB', '', '1500.00', '8563214751', 'drromil12@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:14:11', NULL),
+(7, 'Obstetrics and Gynecology', 'Bhavya rathore', 'Shop 12 Indira Puram Ghaziabad', '', '800.00', '745621330', 'bhawya12@tt.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:15:18', NULL);
 
 -- --------------------------------------------------------
 
