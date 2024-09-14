@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2024 at 09:02 AM
+-- Generation Time: Sep 14, 2024 at 09:56 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -99,7 +99,8 @@ INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `photo`, 
 (4, 'Pediatrics', 'Sumit Sinha', 'A 123 Xyz Aparmtnent Ghaziabad', 'doctor3.jpg', '700.00', '74561235', 'p12@t.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:12:23', NULL),
 (5, 'Orthopedics', 'Vipin Tayagi', 'Yasho Hospital New Delhi', 'doctor4.jpg', '1200.00', '95214563210', 'vpint123@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:13:11', NULL),
 (6, 'Internal Medicine', 'Dr Romil', 'Max Hospital Vaishali  GZB', '', '1500.00', '8563214751', 'drromil12@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:14:11', NULL),
-(7, 'Obstetrics and Gynecology', 'Bhavya rathore', 'Shop 12 Indira Puram Ghaziabad', '', '800.00', '745621330', 'bhawya12@tt.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:15:18', NULL);
+(7, 'Obstetrics and Gynecology', 'Bhavya rathore', 'Shop 12 Indira Puram Ghaziabad', '', '800.00', '745621330', 'bhawya12@tt.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:15:18', NULL),
+(8, 'Internal Medicine', 'Nazrul Islam', 'asgdhjwr', 'listing_img3.jpg', '400.00', '01752437955', 'nazrul@gmail.com', '', '2024-09-14 07:49:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -403,7 +404,7 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `doctorslog`
