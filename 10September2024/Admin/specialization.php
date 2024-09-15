@@ -112,7 +112,7 @@ include_once "dbconfig.php";
                                             <tr>                                       
                                                 <td><?php echo $sn ?></td>
                                                 <td><?php echo $row['specilization'] ?></td>
-                                                <td class="text-center"><a href="" class="btn btn-outline-primary waves-effect waves-light">Edit</a> | <a href="" class="btn btn-outline-danger waves-effect waves-light">Delete</a></td>
+                                                <td class="text-center"><a href="" id="btn1" data-toggle="modal" data-target=".specialization-modal-sm" class="btn btn-outline-primary waves-effect waves-light">Edit</a> | <a href="" class="btn btn-outline-danger waves-effect waves-light">Delete</a></td>
                                     
                                             </tr>
                                             
@@ -128,6 +128,31 @@ include_once "dbconfig.php";
                         <!-- end col -->
                     </div>
                     <!-- end row -->
+                    
+                    <!-- Specialization Edit Modal -->
+                    <div class="modal fade specialization-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title mt-0" id="mySmallModalLabel">Edit Specialization</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="">
+                                                                <div class="form-group">
+                                                                <input type="text" name="" class="form-control">
+                                                                <input type="submit" name="update" value="Update" class="btn btn-success">
+                                                            </form>
+                                                    
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                    </div>
 
                 </div>
                 <!-- container-fluid -->
@@ -175,6 +200,16 @@ include_once "dbconfig.php";
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function(){
+                alert($)          //Work is not End;
+            })
+        });
+
+
+    </script>
 
 </body>
 

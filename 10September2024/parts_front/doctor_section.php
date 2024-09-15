@@ -27,7 +27,7 @@
 						<div class="single-doctor-mask">
 							<div class="single-doctor-mask-inner">
 								<h5>About Doctor</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+								<p><?php echo $row['details'] ?></p>
 								<ul>
 									<li><a href="#">Get Appointment</a></li>
 								</ul>

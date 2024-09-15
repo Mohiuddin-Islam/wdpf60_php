@@ -10,7 +10,7 @@
     <meta content="Themesdesign" name="author" />
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <link href="../plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
@@ -78,8 +78,10 @@
                                     <?php 
                                     if(isset($_POST['submit'])){
                                         extract($_POST);
+                                        
 
                                         require_once "dbconfig.php";
+                                        //$details = mysqli_real_escape_string($db,$details);
 
                                         $photo_name = $_FILES['photo']['name'];
                                         $photo_tname = $_FILES['photo']['tmp_name'];
@@ -88,10 +90,10 @@
 
                                         if(move_uploaded_file($photo_tname, $path.$photo_name)){
                                             
-                                        $sql = $conn->query("INSERT INTO doctors (id,specilization,doctorName,address,photo,docFees,contactno,email,password) VALUES (NULL,'$specilization','$docname','$address','$photo_name','$docfees','$contact','$email','$pass')");
+                                        $sql = $conn->query("INSERT INTO doctors (id,specilization,doctorName,address,photo,docFees,contactno,details,email,password) VALUES (NULL,'$specilization','$docname','$address','$photo_name','$docfees','$contact','$details','$email','$pass')");
 
                                         if($conn->affected_rows){
-                                            echo "INSERTED";
+                                            echo "<h5 style= 'color:green'>Successfully Inserted</h5>";
                                         }
                                         }
 
@@ -126,7 +128,7 @@
                                         <div class="form-group">
                                             <label>Address</label>
                                             <div>
-                                                <textarea required class="form-control" name="address" rows="5"></textarea>
+                                                <textarea required class="form-control" placeholder="Enter Address Here" name="address" rows="5"></textarea>
                                             </div>
                                             <div class="form-group">
                                             <label>Photo</label>
@@ -144,6 +146,11 @@
                                             <label>Email</label>
                                             <input type="text" class="form-control" name="email" required placeholder="Type something" />
                                         </div>
+                                        <div class="form-group">
+                                            <label>Doctor Profile</label>
+                                            <div>
+                                                <textarea class="form-control" name="details" id="details" placeholder="Doctor Details Here" rows="5"></textarea>
+                                            </div>
 
                                         <div class="form-group">
                                             <label>Password</label>
@@ -199,10 +206,10 @@
     <script src="assets/js/jquery.slimscroll.js"></script>
     <script src="assets/js/waves.min.js"></script>
 
-    <script src="../plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
     <!-- Parsley js -->
-    <script src="../plugins/parsleyjs/parsley.min.js"></script>
+    <script src="plugins/parsleyjs/parsley.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
@@ -212,6 +219,55 @@
             $('form').parsley();
         });
     </script>
+    <script src="plugins/tinymce/tinymce.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        if ($("#details").length > 0) {
+            tinymce.init({
+                selector: "textarea#details",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+                style_formats: [{
+                    title: 'Bold text',
+                    inline: 'b'
+                }, {
+                    title: 'Red text',
+                    inline: 'span',
+                    styles: {
+                        color: '#ff0000'
+                    }
+                }, {
+                    title: 'Red header',
+                    block: 'h1',
+                    styles: {
+                        color: '#ff0000'
+                    }
+                }, {
+                    title: 'Example 1',
+                    inline: 'span',
+                    classes: 'example1'
+                }, {
+                    title: 'Example 2',
+                    inline: 'span',
+                    classes: 'example2'
+                }, {
+                    title: 'Table styles'
+                }, {
+                    title: 'Table row 1',
+                    selector: 'tr',
+                    classes: 'tablerow1'
+                }]
+            });
+        }
+    });
+</script>
 
 </body>
 
